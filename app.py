@@ -27,3 +27,21 @@ if st.button("⏳ Time Travel!"):
     st.line_chart(df.set_index("Date"))
     st.dataframe(df)
     st.download_button("📥 Download CSV", df.to_csv(), "rates.csv")
+
+
+# ── COMPARISON STATS ──────────────────────
+st.divider()
+st.subheader("📊 Quick Stats")
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric("Highest Rate", f"{df['Rate'].max():.4f}")
+with col2:
+    st.metric("Lowest Rate", f"{df['Rate'].min():.4f}")
+with col3:
+    st.metric("Average Rate", f"{df['Rate'].mean():.4f}")
+with col4:
+    change = df['Rate'].iloc[-1] - df['Rate'].iloc[0]
+    st.metric("Total Change", f"{change:.4f}", 
+              delta=f"{(change/df['Rate'].iloc[0]*100):.2f}%")
