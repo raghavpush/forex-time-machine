@@ -92,3 +92,5 @@ Pull requests are welcome! Feel free to open an issue for suggestions or bugs.
 ## 📄 License
 
 MIT — free to use and modify.
+
+⭐ Built with love for forex traders
