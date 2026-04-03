@@ -1,94 +1,111 @@
-# 💱 Forex Time Machine
+# Forex Time Machine
 
-> Travel back in time to see how currency rates changed — pick any date range, compare multiple currencies, and download the data!
-
----
-
-## ✨ Features
-
-- 📅 **Preset date buttons** — Last 7 days, 30 days, 6 months, 1 year
-- 🌍 **Multi currency compare** — Compare base currency against multiple targets at once
-- 📊 **Chart type toggle** — Switch between Line, Bar, and Area charts
-- 🔔 **Rate alert** — Set a threshold and get notified if rate dropped below it
-- 📈 **Quick stats** — Highest, Lowest, Average, and Total Change for each currency pair
-- 📥 **Download CSV** — Export data with a smart filename
-- 🌙 **Dark / Light mode** — Toggle from the sidebar
+A Streamlit web app for exploring historical exchange rates, live currency conversion, trend analysis, and multi-currency portfolio planning.
 
 ---
 
-## 🖼️ Preview
+## Features
 
-```
-From: USD  →  To: INR, EUR, GBP
-Date Range: Last 30 days
-Chart: Area | Stats | Alert | Download
-```
+| Tab | Description |
+|-----|-------------|
+| Historical Rates | Fetch and chart exchange rates for any date range with stats and volatility index |
+| Live Converter | Convert any amount in real time with a full reference table and cross rates |
+| Rate Heatmap | Color-coded performance table showing gains and losses across multiple pairs |
+| Moving Average | Overlay 7-day and 30-day MAs with Golden Cross / Death Cross signal detection |
+| Currency Basket | Allocate a budget across multiple currencies by percentage using live rates |
 
 ---
 
-## 🚀 Run Locally
+## Tech Stack
+
+- **Frontend / UI** — [Streamlit](https://streamlit.io)
+- **Rates API** — [Frankfurter API](https://www.frankfurter.app) (free, no key required)
+- **Data** — [pandas](https://pandas.pydata.org)
+- **HTTP** — [requests](https://docs.python-requests.org)
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/raghavpush/forex-time-machine
+git clone https://github.com/your-username/forex-time-machine.git
 cd forex-time-machine
-pip install -r requirements.txt
-streamlit run app.py
 ```
 
----
+### 2. Install dependencies
 
-## ☁️ Deploy on Streamlit Cloud
+```bash
+pip install -r requirements.txt
+```
 
-1. Fork this repo
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Connect your GitHub account
-4. Select this repo and deploy!
+### 3. Run the app
 
----
+```bash
+python -m streamlit run app.py
+```
 
-## 🌍 Supported Currencies
-
-| Code | Currency |
-|------|----------|
-| USD  | US Dollar |
-| INR  | Indian Rupee |
-| EUR  | Euro |
-| GBP  | British Pound |
-| JPY  | Japanese Yen |
-| AUD  | Australian Dollar |
-| CAD  | Canadian Dollar |
-| CHF  | Swiss Franc |
-| CNY  | Chinese Yuan |
-| SGD  | Singapore Dollar |
+The app opens at `http://localhost:8501` in your browser.
 
 ---
 
-## 🛠️ Built With
-
-- [Streamlit](https://streamlit.io) — UI framework
-- [Pandas](https://pandas.pydata.org) — Data handling
-- [Frankfurter API](https://frankfurter.app) — Free historical exchange rates, no API key needed
-
----
-
-## 📁 File Structure
+## Project Structure
 
 ```
 forex-time-machine/
-│
-├── app.py            # Main Streamlit app
-├── requirements.txt  # Dependencies
-└── README.md         # This file
+├── app.py               # Main Streamlit application
+├── requirements.txt     # Python dependencies
+└── README.md
 ```
 
 ---
 
-## 🤝 Contributing
+## Requirements
 
-Pull requests are welcome! Feel free to open an issue for suggestions or bugs.
+```
+streamlit
+requests
+pandas
+```
+
+Python 3.8 or higher recommended.
 
 ---
 
-## 📄 License
+## Screenshots
 
-MIT — free to use and modify.
+> Add screenshots here after running the app.
+
+---
+
+## API Reference
+
+This project uses the [Frankfurter API](https://www.frankfurter.app) — a free, open-source exchange rate API backed by the European Central Bank.
+
+| Endpoint | Usage |
+|----------|-------|
+| `/latest` | Current rates |
+| `/{date}..{date}` | Historical range |
+
+No API key or account required.
+
+---
+
+## Supported Currencies
+
+USD, EUR, GBP, INR, JPY, AUD, CAD, CHF, CNY, SGD, HKD, NOK, SEK, NZD, MXN, ZAR, BRL, TRY, KRW, THB
+
+---
+
+## Notes
+
+- Rates are updated once daily on business days by the European Central Bank.
+- Weekends and public holidays may not have data — the API returns the nearest available date.
+- This app is for informational purposes only and does not constitute financial advice.
+
+---
+
+## License
+
+MIT License. Free to use and modify.
