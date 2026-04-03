@@ -108,4 +108,7 @@ USD, EUR, GBP, INR, JPY, AUD, CAD, CHF, CNY, SGD, HKD, NOK, SEK, NZD, MXN, ZAR, 
 
 ## License
 
-MIT License. Free to use and modify.
+
+MIT — free to use and modify.
+
+⭐ Built with love for forex traders
